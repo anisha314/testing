@@ -1,8 +1,17 @@
-function mergingObjects(student, course) {
-    const studentWithCourse = { ...student, ...course };
-    return studentWithCourse;
+function averageSalary(employees) {
+    let totalSalary = 0;
+    
+    for (const employee of employees) {
+        totalSalary += employee.salary;
+    }
+    
+    return totalSalary / employees.length;
 }
 
-const student = { name: "Alice", age: 20 };
-const course = { courseName: "Math", teacher: "Mr. Smith" };
-console.log(mergingObjects(student, course))
+const employees = [
+    { name: "John Doe", age: 30, department: "HR", salary: 50000 },
+    { name: "Jane Smith", age: 28, department: "Finance", salary: 60000 },
+    { name: "Alex Johnson", age: 35, department: "IT", salary: 70000 },
+];
+
+console.log(averageSalary(employees));
