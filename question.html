@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Selector</title>
+    <style>
+
+body{
+
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    select {
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Select an Animal</h1>
+
+  <select id="animalSelect" onchange="updateImage()">
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="elephant">Elephant</option>
+    <option value="lion">Lion</option>
+  </select>
+
+  <img id="animalImage" src="https://place-puppy.com/300x300" alt="Animal Image">
+
+  <script>
+    function updateImage() {
+      const animalSelect = document.getElementById('animalSelect');
+      const animalImage = document.getElementById('animalImage');
+      const selectedAnimal = animalSelect.value;
+
+      let imageUrl = '';
+
+      switch (selectedAnimal) {
+        case 'dog':
+          imageUrl = 'https://place-puppy.com/300x300';
+          break;
+        case 'cat':
+          imageUrl = 'https://placekitten.com/300/300';
+          break;
+        case 'elephant':
+          imageUrl = 'https://via.placeholder.com/300?text=Elephant';
+          break;
+        case 'lion':
+          imageUrl = 'https://via.placeholder.com/300?text=Lion';
+          break;
+      }
+
+      animalImage.src = imageUrl;
+    }
+  </script>
+
+
+    
+</body>
+</html>
+
+
